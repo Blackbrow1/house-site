@@ -1,0 +1,25 @@
+// fonts
+$font-first: 'Montserrat', Arial, sans-serif;
+$font-second: 'Inter', Arial, sans-serif;
+
+$text-color: #747474;
+$text-button: #FBD8D5;
+
+$basic-white: #ffffff;
+$main-color: #43442f;
+$tech-color: #393930;
+$accent-color: #A62C21;
+$button-hover: #B95850;
+$background-color: #F9F9F9;
+
+$button-shadow:rgba(0, 0, 0, 0.40);
+
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
+$text-big-tablet: 20px;
+$text-big-mobile: 15px;
+
+.accent-color {
+  color: $accent-color;
+}

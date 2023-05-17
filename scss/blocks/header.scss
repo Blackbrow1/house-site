@@ -1,0 +1,149 @@
+.header {
+  padding-top: 7px;
+}
+
+.header__wrap {
+  @include wrapper-mob;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__toggle {
+  position: relative;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: inherit;
+  z-index: 3;
+
+  &--open {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: $main-color;
+      box-shadow: 0 9px 0 0 $main-color, 0 18px 0 0 $main-color;
+    }
+  }
+
+  &--close {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 14px;
+      right: -2px;
+      width: 35px;
+      height: 2px;
+      background-color: $basic-white;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.header__nav {
+  @include wrapper-mob;
+}
+
+.header__contacts {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .header {
+    padding-top: 20px;
+    padding-bottom: 21px;
+  }
+
+  .header__wrap {
+    @include wrapper-tablet;
+  }
+
+  .header__contacts {
+    display: block;
+  }
+
+  .header__toggle {
+    width: 40px;
+    height: 26px;
+
+    &--open {
+      &::before {
+        width: 40px;
+        box-shadow: 0 12px 0 0 $main-color, 0 24px 0 0 $main-color;
+      }
+    }
+
+    &--close {
+      &::before,
+      &::after {
+        top: 14px;
+        right: 0;
+        width: 40px;
+      }
+    }
+  }
+
+  .header__contacts-phone {
+    text-decoration: none;
+    color: $main-color;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .header__contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 250px;
+  }
+
+  .header__contacts-wrap {
+    width: 335px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__logo {
+    position: relative;
+    top: -7px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .header {
+    padding-bottom: 0;
+  }
+
+  .header__wrap {
+    @include wrapper-desktop;
+  }
+
+  .header__toggle {
+    display: none;
+  }
+
+  .header__toggle-back {
+    display: none;
+  }
+
+  .header__contacts-wrap {
+    width: 250px;
+  }
+}

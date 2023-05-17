@@ -1,0 +1,81 @@
+.drainage-systems {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.drainage-systems__wrap {
+  @include wrapper-mob;
+}
+
+.drainage-systems__list {
+  @include clear-list;
+}
+
+.drainage-systems__title {
+  margin-bottom: 30px;
+}
+
+.drainage-systems__list--card {
+  margin-bottom: 30px;
+}
+
+.drainage-systems__list--card:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: $tablet-width) {
+  .drainage-systems {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .drainage-systems__wrap {
+    @include wrapper-tablet;
+  }
+
+  .drainage-systems__title {
+    margin-bottom: 40px;
+  }
+
+  .drainage-systems__list--card {
+    width: 700px;
+    margin-bottom: 50px;
+
+    img {
+      width: 708px;
+      height: 400px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .drainage-systems {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .drainage-systems__wrap {
+    @include wrapper-desktop;
+  }
+
+  .drainage-systems__title {
+    margin-bottom: 52px;
+  }
+
+  .drainage-systems__list--card {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: 584px;
+      height: 339px;
+      margin-bottom: 0;
+    }
+  }
+}

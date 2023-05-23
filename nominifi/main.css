@@ -89,9 +89,9 @@
 .header__toggle {
   background: inherit;
   position: relative;
-  top: 5px;
+  top: 2px;
   width: 30px;
-  height: 30px;
+  height: 20px;
   border: none;
   cursor: pointer;
   z-index: 3;
@@ -114,7 +114,7 @@
   background: #ffffff;
   content: "";
   position: absolute;
-  top: 14px;
+  top: 11px;
   right: -2px;
   width: 35px;
   height: 2px;
@@ -192,6 +192,9 @@
   width: auto;
   padding-top: 24px;
   z-index: 3;
+}
+
+.nav--closed {
   display: none;
 }
 
@@ -232,6 +235,9 @@
   margin: 0 auto;
   padding-top: 19px;
   z-index: 10;
+}
+
+.nav__materials--closed {
   display: none;
 }
 
@@ -241,10 +247,6 @@
 
 .nav__materials-item--back {
   margin-bottom: 25px;
-}
-
-.nav__item-materials {
-  cursor: pointer;
 }
 
 .nav__button-back {
@@ -280,7 +282,7 @@
 }
 
 .offer__wrap::after {
-  background: url("../img/main-image.png") no-repeat;
+  background: url("../img/main-image@1.5x.png") no-repeat 0 0/290px 299px;
   position: absolute;
   content: "";
   width: 290px;
@@ -290,6 +292,7 @@
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  z-index: -1;
 }
 
 .offer__title {
@@ -756,10 +759,10 @@
 }
 
 .about__main-content::after {
+  background: url("../img/about/about@1.5x.png") 0 0/280px 280px;
   content: "";
   width: 280px;
   height: 280px;
-  background: url("../img/about/about.png") no-repeat 0 0;
   position: absolute;
   left: 0;
   bottom: 30px;
@@ -982,6 +985,44 @@
   padding-top: 16px;
 }
 
+.footer__materials {
+  list-style: none;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -385px;
+  padding: 30px 20px;
+  border-radius: 8px;
+  -webkit-box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.4);
+  width: 240px;
+  z-index: 20;
+}
+
+.footer__materials--show {
+  display: none;
+}
+
+.footer__materials-item a {
+  color: #43442f;
+  font-size: 13px;
+}
+
+.footer__materials-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.footer__nav-item--materials {
+  position: relative;
+}
+
+.footer__materials-title {
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .popup {
   background: #ffffff;
   position: fixed;
@@ -1046,8 +1087,77 @@
   outline: none;
 }
 
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translate(-50%, -2000px);
+    transform: translate(-50%, -2000px);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translate(-50%, -2000px);
+    transform: translate(-50%, -2000px);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
 .popup--show {
   display: block;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate(-55%, -50%);
+    transform: translate(-55%, -50%);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate(-45%, -55%);
+    transform: translate(-45%, -55%);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate(-55%, -50%);
+    transform: translate(-55%, -50%);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate(-45%, -55%);
+    transform: translate(-45%, -55%);
+  }
+}
+
+.popup-error {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
 }
 
 .popup__title {
@@ -1144,7 +1254,7 @@
   }
 
   .offer__wrap::after {
-    background-image: url("../img/main-image.webp");
+    background-image: url("../img/main-image@1.5x.webp");
   }
 
   .about__brands-item::after {
@@ -1152,7 +1262,7 @@
   }
 
   .about__main-content::after {
-    background: url("../img/about/about.webp") no-repeat 0 0;
+    background-image: url("../img/about/about@1.5x.webp");
   }
 
   .why-we__item--chain::after {
@@ -1216,6 +1326,7 @@
   .header__toggle {
     width: 40px;
     height: 26px;
+    top: 0;
   }
 
   .header__toggle--open::before {
@@ -1284,7 +1395,7 @@
     width: 708px;
     padding: 0 30px;
     margin: 0 auto;
-    padding-top: 85px;
+    padding-top: 37px;
   }
 
   .offer {
@@ -1301,18 +1412,20 @@
   .offer__wrap::before {
     width: 929px;
     height: 783px;
-    left: -274px;
+    left: -244px;
     top: -200px;
     background-image: url("../img/rounds-tablet.svg");
     background-repeat: no-repeat;
+    z-index: -1;
   }
 
   .offer__wrap::after {
-    width: 910px;
-    height: 910px;
-    bottom: -40px;
-    left: 60%;
-    background-image: url("../img/main-image-tablet.png");
+    width: 586px;
+    height: 604px;
+    bottom: 90px;
+    left: 50%;
+    background-image: url("../img/main-image-tablet@1.5x.png");
+    background-size: 586px 604px;
   }
 
   .offer__title {
@@ -1696,7 +1809,8 @@
   .about__main-content::after {
     width: 695px;
     height: 479px;
-    background: url("../img/about/about-tablet.png") no-repeat;
+    background-image: url("../img/about/about-tablet@1.5x.png");
+    background-size: 695px 479px;
     left: 30px;
     bottom: 0;
   }
@@ -1868,6 +1982,49 @@
     row-gap: 34px;
   }
 
+  .footer__materials {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    top: -430px;
+    padding: 30px 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    -webkit-box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.4);
+    width: 265px;
+    display: none;
+  }
+
+  .footer__materials-item a {
+    color: #43442f;
+    font-size: 14px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .footer__materials-item a:hover {
+    color: #A62C21;
+  }
+
+  .footer__materials-item:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  .footer__nav-item--materials:hover .footer__materials {
+    display: block;
+  }
+
+  .footer__nav-item--materials {
+    position: relative;
+  }
+
+  .footer__materials-title {
+    font-size: 16px;
+  }
+
   .popup {
     padding: 40px 72px 53px 49px;
     width: 687px;
@@ -1921,11 +2078,11 @@
     }
 
     .offer__wrap::after {
-      background-image: url("../img/main-image-tablet.webp");
+      background-image: url("../img/main-image-tablet@1.5x.webp");
     }
 
     .about__main-content::after {
-      background: url("../img/about/about-tablet.webp") no-repeat;
+      background-image: url("../img/about/about-tablet@1.5x.webp");
     }
 
     .why-we__item--chain::after {
@@ -1954,28 +2111,6 @@
 
     .popup::after {
       background-image: url("../img/rounds-popup-tablet.svg");
-    }
-}
-}
-
-@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 768px) and (min-resolution: 2dppx) {
-  .offer__wrap::after {
-    background-image: url("../img/main-image-tablet@2x.png");
-    background-size: 910px 910px;
-  }
-
-  .about__main-content::after {
-    background-image: url("../img/about/about-tablet@2x.png");
-    background-size: 695px 479px;
-  }
-
-@supports (-webkit-appearance:none) {
-    .offer__wrap::after {
-      background-image: url("../img/main-image-tablet@2x.webp");
-    }
-
-    .about__main-content::after {
-      background-image: url("../img/about/about-tablet@2x.webp");
     }
 }
 }
@@ -2016,6 +2151,10 @@
     padding: 0;
   }
 
+  .nav--closed {
+    display: block;
+  }
+
   .nav__item {
     position: relative;
     color: #43442f;
@@ -2028,7 +2167,7 @@
     color: #43442f;
   }
 
-  .nav__item:hover::before {
+  .nav__item:not(:nth-child(2)):hover::before {
     content: "";
     position: absolute;
     left: 0;
@@ -2048,6 +2187,48 @@
     width: 457px;
   }
 
+  .nav__item-materials {
+    position: relative;
+  }
+
+  .nav__item-materials:hover .nav__materials {
+    display: block;
+  }
+
+  .nav__materials {
+    top: 20px;
+    left: 15px;
+    display: block;
+    background: none;
+    padding: 30px 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    -webkit-box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 15px 0 rgba(0, 0, 0, 0.4);
+    width: 265px;
+    height: 350px;
+    display: none;
+  }
+
+  .nav__materials-item--back {
+    display: none;
+  }
+
+  .nav__materials-item {
+    font-size: 14px;
+  }
+
+  .nav__materials-item a {
+    color: #393930;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .nav__materials-item a:hover {
+    color: #A62C21;
+  }
+
   .offer {
     width: 1200px;
     padding: 0 40px;
@@ -2064,13 +2245,14 @@
     width: 1079px;
     height: 852px;
     background-image: url("../img/rounds-desktop.svg");
-    left: -374px;
+    top: -180px;
+    left: -425px;
   }
 
   .offer__wrap::after {
     bottom: 0;
-    left: 150%;
-    top: -150px;
+    left: 135%;
+    top: 20px;
   }
 
   .offer__description {
@@ -2402,7 +2584,8 @@
   .about__main-content::after {
     width: 798px;
     height: 549px;
-    background: url("../img/about/about-desktop.png") no-repeat 0 0;
+    background-image: url("../img/about/about-desktop@1.5x.png");
+    background-size: 798px 549px;
     left: 464px;
     bottom: 257px;
   }
@@ -2522,42 +2705,7 @@
     }
 
     .about__main-content::after {
-      background: url("../img/about/about-desktop.webp") no-repeat 0 0;
-    }
-}
-}
-
-@media (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1280px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1280px) and (min-resolution: 2dppx) {
-  .about__main-content::after {
-    background-image: url("../img/about/about-desktop@2x.png");
-    background-size: 798px 549px;
-  }
-
-@supports (-webkit-appearance:none) {
-    .about__main-content::after {
-      background-image: url("../img/about/about-desktop@2x.webp");
-    }
-}
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 2dppx) {
-  .offer__wrap::after {
-    background-image: url("../img/main-image@2x.png");
-    background-size: 290px 299px;
-  }
-
-  .about__main-content::after {
-    background-image: url("../img/about/about@2x.png");
-    background-size: 280px 280px;
-  }
-
-@supports (-webkit-appearance:none) {
-    .offer__wrap::after {
-      background-image: url("../img/main-image@2x.webp");
-    }
-
-    .about__main-content::after {
-      background-image: url("../img/about/about@2x.webp");
+      background-image: url("../img/about/about-desktop@1.5x.webp");
     }
 }
 }
